@@ -8,6 +8,6 @@ import java.util.ArrayList;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long> {
-    public abstract ArrayList<UsuarioModel> findByPriority(Integer priority);
-
+//    public abstract ArrayList<UsuarioModel> findByPriority(Integer id);
+    public abstract ArrayList<UsuarioModel> findById(Integer id);
 }

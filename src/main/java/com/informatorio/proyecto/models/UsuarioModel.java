@@ -1,6 +1,7 @@
 package com.informatorio.proyecto.models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
@@ -11,9 +12,16 @@ public class UsuarioModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    private String name;
+    private String nombre;
+    private String apellido;
+
+    @Column(unique = true, nullable = false)
     private String email;
-    private Integer priority;
+    private String password;
+    private Date fechaCreacon;
+    private String ciudad;
+    private String provincia;
+    private String pais;
 
     public Long getId() {
         return id;
@@ -23,12 +31,20 @@ public class UsuarioModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getEmail() {
@@ -39,11 +55,43 @@ public class UsuarioModel {
         this.email = email;
     }
 
-    public Integer getPriority() {
-        return priority;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPriority(Integer priority) {
-        this.priority = priority;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getFechaCreacon() {
+        return fechaCreacon;
+    }
+
+    public void setFechaCreacon(Date fechaCreacon) {
+        this.fechaCreacon = fechaCreacon;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 }

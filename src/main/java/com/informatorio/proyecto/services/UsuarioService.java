@@ -26,8 +26,8 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer priority){
-        return usuarioRepository.findByPriority(priority);
+    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer id){
+        return usuarioRepository.findById(id);
     }
 
     public boolean eliminarUsuario(Long id){
