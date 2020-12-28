@@ -5,7 +5,6 @@ import com.informatorio.proyecto.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -14,23 +13,19 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    public ArrayList<UsuarioModel> obtenerUsuario(){
-        return (ArrayList<UsuarioModel>)usuarioRepository.findAll();
+    public ArrayList<UsuarioModel> obtenerUsuarios(){
+        return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
     }
 
     public UsuarioModel guardarUsuario(UsuarioModel usuario){
         return usuarioRepository.save(usuario);
     }
 
-    public Optional<UsuarioModel> obtenerPorId(Long id){
+    public Optional<UsuarioModel> obtenerPorId(Integer id){
         return usuarioRepository.findById(id);
     }
 
-    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer id){
-        return usuarioRepository.findById(id);
-    }
-
-    public boolean eliminarUsuario(Long id){
+    public boolean eliminarUsuario(Integer id){
         try{
             usuarioRepository.deleteById(id);
             return true;

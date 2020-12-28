@@ -3,14 +3,14 @@ package com.informatorio.proyecto.models;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "user")
+@Entity //con esta anotación decimos que es un modelo de una tabla
+@Table(name = "user") //aca definimos el nombre de la tabla
 public class UsuarioModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private Long id;
+    @Id //le indicamos que este es el id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //que se autogenera y que es incrementable
+    @Column(unique = true, nullable = false) //es único y no puede ser nulo
+    private Integer id;
 
     private String nombre;
     private String apellido;
@@ -18,16 +18,16 @@ public class UsuarioModel {
     @Column(unique = true, nullable = false)
     private String email;
     private String password;
-    private Date fechaCreacon;
+    private Date fechaCreacion;
     private String ciudad;
     private String provincia;
     private String pais;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -64,11 +64,11 @@ public class UsuarioModel {
     }
 
     public Date getFechaCreacon() {
-        return fechaCreacon;
+        return fechaCreacion;
     }
 
     public void setFechaCreacon(Date fechaCreacon) {
-        this.fechaCreacon = fechaCreacon;
+        this.fechaCreacion = fechaCreacon;
     }
 
     public String getCiudad() {
