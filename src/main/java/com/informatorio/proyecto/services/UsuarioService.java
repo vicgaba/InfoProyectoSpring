@@ -21,7 +21,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public Optional<UsuarioModel> obtenerPorId(Integer id){
+    public Optional obtenerPorId(Integer id){
         return usuarioRepository.findById(id);
     }
 
